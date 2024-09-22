@@ -1,0 +1,16 @@
+button {
+    width:200px;
+    height: 50px;
+    background-color: chartreuse;
+    border: none;
+    border-radius: 20px;
+}
+input {
+    width:210px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    background-color:lightsteelblue;
+    margin-top:30px;
+    padding-left: 20px;
+}
