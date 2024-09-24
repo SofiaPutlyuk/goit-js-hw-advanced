@@ -1,0 +1,17 @@
+{
+  "name": "hw7",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "parcel": "parcel index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "handlebars": "^4.7.8",
+    "parcel-transformer-hbs": "^1.0.4"
+  }
+}
