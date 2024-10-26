@@ -1,4 +1,3 @@
-
 const imgobserve = new IntersectionObserver((entries) => {
     entries.forEach((photo) => {
         if (photo.isIntersecting) {
