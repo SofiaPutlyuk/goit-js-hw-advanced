@@ -1,0 +1,25 @@
+form {
+    width: 200px;
+    height: 200px;
+    flex-direction: column;
+    display: flex;
+    gap:30px;
+}
+input {
+    background-color: darkgrey;
+    width:100px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    padding-left: 10px;
+}
+button {
+    width:110px;
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    background-color: darkslategrey;
+    color:white;
+}
+
+/*# sourceMappingURL=/main.af46ece4.css.map */
