@@ -4,10 +4,10 @@ const searchButton = document.getElementById('buttonSubmit')
 searchForm.addEventListener('submit', function(e){
     e.preventDefault()
 })
+const searchNameInput = document.getElementById('nameInput')
+const searchEmailInput = document.getElementById('emailInput')
+const searchMessageInput = document.getElementById('messageInput')
 searchButton.addEventListener('click',function(){
-    const searchNameInput = document.getElementById('nameInput')
-    const searchEmailInput = document.getElementById('emailInput')
-    const searchMessageInput = document.getElementById('messageInput')
     const searchValueName = searchNameInput.value
     const searchValueEmail = searchEmailInput.value
     const searchValueMessage = searchMessageInput.value
