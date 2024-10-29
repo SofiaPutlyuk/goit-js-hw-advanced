@@ -1,13 +1,12 @@
-<div >
-<p>Name:{{name}}</p>
-<p>Age:{{age}}</p>
-<p>Email:{{email}}</p>
 <ul>
-{{#each hobbies}}
-<li>{{this}}</li>
-{{/each}}
+  {{#each this}}
+    <li>
+      <h2>{{name}}</h2>
+      <p>Вік: {{age}}</p>
+      <p>Активний: {{#if isActive}}Так{{else}}Ні{{/if}}</p>
+      <p>Email: {{email}}</p>
+      <p>Хобі: {{#each hobbies}} {{this}} {{/each}}</p>
+      <p>Адреса: {{address.city}}, Поштовий код: {{address.postalCode}}</p>
+    </li>
+  {{/each}}
 </ul>
-<p>Address:</p>
-<p>Місто:{{address.city}}</p>
-<p>Номер картики:{{address.postalCode}}</p>
-</div>

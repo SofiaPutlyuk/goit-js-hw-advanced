@@ -587,23 +587,66 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _tmpHandlebars = require("./templates/tmp.handlebars");
 var _tmpHandlebarsDefault = parcelHelpers.interopDefault(_tmpHandlebars);
-const userProfile = {
-    name: "\u041E\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440",
-    age: 30,
-    isActive: true,
-    email: "oleksandr@example.com",
-    hobbies: [
-        "\u0444\u0443\u0442\u0431\u043E\u043B",
-        "\u0447\u0438\u0442\u0430\u043D\u043D\u044F",
-        "\u043F\u043E\u0434\u043E\u0440\u043E\u0436\u0456"
-    ],
-    address: {
-        city: "\u041A\u0438\u0457\u0432",
-        postalCode: "01601"
+const userProfile = [
+    {
+        name: "\u041E\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440",
+        age: 30,
+        isActive: true,
+        email: "oleksandr@example.com",
+        hobbies: [
+            "\u0444\u0443\u0442\u0431\u043E\u043B",
+            "\u0447\u0438\u0442\u0430\u043D\u043D\u044F",
+            "\u043F\u043E\u0434\u043E\u0440\u043E\u0436\u0456"
+        ],
+        address: {
+            city: "\u041A\u0438\u0457\u0432",
+            postalCode: "01601"
+        }
+    },
+    {
+        name: "\u041C\u0430\u0440\u0456\u044F",
+        age: 25,
+        isActive: false,
+        email: "maria@example.com",
+        hobbies: [
+            "\u043C\u0443\u0437\u0438\u043A\u0430",
+            "\u0442\u0430\u043D\u0446\u0456"
+        ],
+        address: {
+            city: "\u041B\u044C\u0432\u0456\u0432",
+            postalCode: "79000"
+        }
+    },
+    {
+        name: "\u041F\u0435\u0442\u0440\u043E",
+        age: 35,
+        isActive: true,
+        email: "petro@example.com",
+        hobbies: [
+            "\u0441\u043F\u043E\u0440\u0442",
+            "\u043F\u043E\u0434\u043E\u0440\u043E\u0436\u0456"
+        ],
+        address: {
+            city: "\u041E\u0434\u0435\u0441\u0430",
+            postalCode: "65000"
+        }
     }
-};
-const markup = (0, _tmpHandlebarsDefault.default)(userProfile);
-document.getElementById("program").innerHTML = markup;
+];
+const searchButton = document.getElementById("sortButton");
+searchButton.addEventListener("click", function() {
+    const sortNames = [
+        ...userProfile
+    ].sort((a, b)=>{
+        return a.name.localeCompare(b.name);
+    });
+    usersRender(sortNames);
+});
+function usersRender(users) {
+    const markup = (0, _tmpHandlebarsDefault.default)(users);
+    console.log(markup);
+    document.getElementById("program").innerHTML = markup;
+}
+usersRender(userProfile);
 
 },{"./templates/tmp.handlebars":"kc53l","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kc53l":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -612,60 +655,105 @@ var _handlebars = require("handlebars");
 var _handlebarsDefault = parcelHelpers.interopDefault(_handlebars);
 const templateFunction = (0, _handlebarsDefault.default).template({
     "1": function(container, depth0, helpers, partials, data) {
-        return "<li>" + container.escapeExpression(container.lambda(depth0, depth0)) + "</li>\r\n";
-    },
-    "compiler": [
-        8,
-        ">= 4.3.0"
-    ],
-    "main": function(container, depth0, helpers, partials, data) {
         var stack1, helper, alias1 = depth0 != null ? depth0 : container.nullContext || {}, alias2 = container.hooks.helperMissing, alias3 = "function", alias4 = container.escapeExpression, alias5 = container.lambda, lookupProperty = container.lookupProperty || function(parent, propertyName) {
             if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
             return undefined;
         };
-        return "<div >\r\n<p>Name:" + alias4((helper = (helper = lookupProperty(helpers, "name") || (depth0 != null ? lookupProperty(depth0, "name") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+        return "    <li>\r\n      <h2>" + alias4((helper = (helper = lookupProperty(helpers, "name") || (depth0 != null ? lookupProperty(depth0, "name") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
             "name": "name",
             "hash": {},
             "data": data,
             "loc": {
                 "start": {
-                    "line": 2,
-                    "column": 8
-                },
-                "end": {
-                    "line": 2,
-                    "column": 16
-                }
-            }
-        }) : helper)) + "</p>\r\n<p>Age:" + alias4((helper = (helper = lookupProperty(helpers, "age") || (depth0 != null ? lookupProperty(depth0, "age") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "age",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
-                    "line": 3,
-                    "column": 7
-                },
-                "end": {
-                    "line": 3,
-                    "column": 14
-                }
-            }
-        }) : helper)) + "</p>\r\n<p>Email:" + alias4((helper = (helper = lookupProperty(helpers, "email") || (depth0 != null ? lookupProperty(depth0, "email") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
-            "name": "email",
-            "hash": {},
-            "data": data,
-            "loc": {
-                "start": {
                     "line": 4,
-                    "column": 9
+                    "column": 10
                 },
                 "end": {
                     "line": 4,
                     "column": 18
                 }
             }
-        }) : helper)) + "</p>\r\n<ul>\r\n" + ((stack1 = lookupProperty(helpers, "each").call(alias1, depth0 != null ? lookupProperty(depth0, "hobbies") : depth0, {
+        }) : helper)) + "</h2>\r\n      <p>\u0412\u0456\u043A: " + alias4((helper = (helper = lookupProperty(helpers, "age") || (depth0 != null ? lookupProperty(depth0, "age") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "age",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 5,
+                    "column": 14
+                },
+                "end": {
+                    "line": 5,
+                    "column": 21
+                }
+            }
+        }) : helper)) + "</p>\r\n      <p>\u0410\u043A\u0442\u0438\u0432\u043D\u0438\u0439: " + ((stack1 = lookupProperty(helpers, "if").call(alias1, depth0 != null ? lookupProperty(depth0, "isActive") : depth0, {
+            "name": "if",
+            "hash": {},
+            "fn": container.program(2, data, 0),
+            "inverse": container.program(4, data, 0),
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 6,
+                    "column": 19
+                },
+                "end": {
+                    "line": 6,
+                    "column": 55
+                }
+            }
+        })) != null ? stack1 : "") + "</p>\r\n      <p>Email: " + alias4((helper = (helper = lookupProperty(helpers, "email") || (depth0 != null ? lookupProperty(depth0, "email") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+            "name": "email",
+            "hash": {},
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 7,
+                    "column": 16
+                },
+                "end": {
+                    "line": 7,
+                    "column": 25
+                }
+            }
+        }) : helper)) + "</p>\r\n      <p>\u0425\u043E\u0431\u0456: " + ((stack1 = lookupProperty(helpers, "each").call(alias1, depth0 != null ? lookupProperty(depth0, "hobbies") : depth0, {
+            "name": "each",
+            "hash": {},
+            "fn": container.program(6, data, 0),
+            "inverse": container.noop,
+            "data": data,
+            "loc": {
+                "start": {
+                    "line": 8,
+                    "column": 15
+                },
+                "end": {
+                    "line": 8,
+                    "column": 51
+                }
+            }
+        })) != null ? stack1 : "") + "</p>\r\n      <p>\u0410\u0434\u0440\u0435\u0441\u0430: " + alias4(alias5((stack1 = depth0 != null ? lookupProperty(depth0, "address") : depth0) != null ? lookupProperty(stack1, "city") : stack1, depth0)) + ", \u041F\u043E\u0448\u0442\u043E\u0432\u0438\u0439 \u043A\u043E\u0434: " + alias4(alias5((stack1 = depth0 != null ? lookupProperty(depth0, "address") : depth0) != null ? lookupProperty(stack1, "postalCode") : stack1, depth0)) + "</p>\r\n    </li>\r\n";
+    },
+    "2": function(container, depth0, helpers, partials, data) {
+        return "\u0422\u0430\u043A";
+    },
+    "4": function(container, depth0, helpers, partials, data) {
+        return "\u041D\u0456";
+    },
+    "6": function(container, depth0, helpers, partials, data) {
+        return " " + container.escapeExpression(container.lambda(depth0, depth0)) + " ";
+    },
+    "compiler": [
+        8,
+        ">= 4.3.0"
+    ],
+    "main": function(container, depth0, helpers, partials, data) {
+        var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+            if (Object.prototype.hasOwnProperty.call(parent, propertyName)) return parent[propertyName];
+            return undefined;
+        };
+        return "<ul>\r\n" + ((stack1 = lookupProperty(helpers, "each").call(depth0 != null ? depth0 : container.nullContext || {}, depth0, {
             "name": "each",
             "hash": {},
             "fn": container.program(1, data, 0),
@@ -673,15 +761,15 @@ const templateFunction = (0, _handlebarsDefault.default).template({
             "data": data,
             "loc": {
                 "start": {
-                    "line": 6,
-                    "column": 0
+                    "line": 2,
+                    "column": 2
                 },
                 "end": {
-                    "line": 8,
-                    "column": 9
+                    "line": 11,
+                    "column": 11
                 }
             }
-        })) != null ? stack1 : "") + "</ul>\r\n<p>Address:</p>\r\n<p>\u041C\u0456\u0441\u0442\u043E:" + alias4(alias5((stack1 = depth0 != null ? lookupProperty(depth0, "address") : depth0) != null ? lookupProperty(stack1, "city") : stack1, depth0)) + "</p>\r\n<p>\u041D\u043E\u043C\u0435\u0440 \u043A\u0430\u0440\u0442\u0438\u043A\u0438:" + alias4(alias5((stack1 = depth0 != null ? lookupProperty(depth0, "address") : depth0) != null ? lookupProperty(stack1, "postalCode") : stack1, depth0)) + "</p>\r\n</div>";
+        })) != null ? stack1 : "") + "</ul>";
     },
     "useData": true
 });
