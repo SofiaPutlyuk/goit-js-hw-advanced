@@ -10,12 +10,11 @@ defaultModules.set(PNotifyMobile, {});
 const keys = ['a','b','c','d','e','Enter','ArrowUp','ArrowDown','ArrowLeft','ArrowRight']
 let currentKeyIndex = 0;
 let key = ''
+const searchKeyId = document.getElementById('key')
 function randomKey(){
     if(currentKeyIndex < keys.length){
         key = keys[currentKeyIndex]
-        const searchKeyId = document.getElementById('key')
         searchKeyId.innerHTML = `${key}`
-        console.log(key)
     }else {
         const mySuccess = success({
 

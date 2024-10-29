@@ -1,11 +1,11 @@
 {
   "devDependencies": {
     "@babel/core": "^7.25.8",
-    "@pnotify/core": "^5.2.0"
+    "@pnotify/core": "^5.2.0",
+    "parcel": "^2.12.0"
   },
   "dependencies": {
     "@pnotify/mobile": "^5.2.0",
-    "http-server": "^14.1.1",
-    "parcel-bundler": "^1.12.5"
+    "http-server": "^14.1.1"
   }
 }
