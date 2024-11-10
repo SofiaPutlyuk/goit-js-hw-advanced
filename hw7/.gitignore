@@ -1,6 +1,5 @@
 node_modules/
 dist/
 .parcel-cache/
-hw7/node_modules/
 hw7/dist/
-hw7/.parcel-cache/
+hw7/.parcel-cache
