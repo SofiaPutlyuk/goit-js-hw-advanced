@@ -1,0 +1,12 @@
+.style-capital {
+    text-align: center;
+
+}
+
+.wrapperStyle {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    
+}
